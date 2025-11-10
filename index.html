@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hybrid Cloud Computing Model — Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Hybrid Cloud Computing Model</h1>
+    <p class="sub">Interactive demo — <strong>Sanskriti Singh</strong>, Kalinga Institute of Industrial Technology</p>
+  </header>
+  <main>
+    <section class="intro card">
+      <h2>Introduction</h2>
+      <p>This page demonstrates the working of a hybrid cloud model: public + private cloud cooperating with a load balancer and auto-scaling behavior. Click <strong>Send Requests</strong> to simulate traffic and watch the system respond.</p>
+    </section>
+
+    <section class="architecture card">
+      <h2>Architecture (Animated)</h2>
+      <div class="arch-area">
+        <div class="cloud public">
+          <div class="cloud-title">Public Cloud</div>
+          <div class="servers" id="public-servers"></div>
+        </div>
+
+        <div class="middle">
+          <div class="users"><div class="user" id="user-icon">👤</div><div class="label">Users</div></div>
+          <div class="loadbalancer" id="lb"><div class="lb-title">Load Balancer</div><div class="lb-body">↔</div></div>
+        </div>
+
+        <div class="cloud private">
+          <div class="cloud-title">Private Cloud</div>
+          <div class="servers" id="private-servers"></div>
+        </div>
+      </div>
+      <p class="hint">Green glow = active servers. Click controls below to simulate load spikes and observe auto-scaling.</p>
+    </section>
+
+    <section class="controls card">
+      <h2>Controls & Simulation</h2>
+      <div class="buttons">
+        <button onclick="sendRequests(1)">Send 1 Request</button>
+        <button onclick="sendRequests(5)">Send 5 Requests</button>
+        <button onclick="sendRequests(20)">Load Spike (20)</button>
+        <button onclick="toggleAuto()">Toggle Auto-Scaling: <span id="autos">ON</span></button>
+        <button onclick="resetSim()">Reset</button>
+      </div>
+      <div class="status" id="status">
+        <div>Queued Requests: <span id="queue">0</span></div>
+        <div>Public Servers: <span id="pcount">2</span></div>
+        <div>Private Servers: <span id="prcount">1</span></div>
+        <div>Auto-scaling: <span id="autosState">ON</span></div>
+      </div>
+    </section>
+
+    <section class="explain card">
+      <h2>How it works</h2>
+      <ol>
+        <li>Users send requests to the Load Balancer.</li>
+        <li>Load Balancer distributes requests to Public and Private cloud servers.</li>
+        <li>When queued load rises, auto-scaling spins up additional public servers (simulated).</li>
+        <li>Load reduces and autoscaler scales down to baseline.</li>
+      </ol>
+    </section>
+
+    <footer>
+      <p>Project: <strong>Hybrid Cloud Computing Model</strong> — Demo by <strong>Sanskriti Singh</strong></p>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
