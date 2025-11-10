@@ -1,0 +1,17 @@
+body{font-family:Arial,Helvetica,sans-serif;background:#f6f8fb;margin:0;color:#222}
+header{background:linear-gradient(90deg,#0e7c86,#53c6c8);color:white;padding:28px 20px;text-align:center}
+header h1{margin:0;font-size:28px}
+header .sub{margin-top:6px;opacity:0.9}
+main{max-width:980px;margin:20px auto;padding:0 16px}
+.card{background:#fff;padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(15,30,50,0.06);margin-bottom:16px}
+.arch-area{display:flex;gap:18px;align-items:center;justify-content:space-between;padding:12px 6px}
+.cloud{flex:1;padding:12px;border-radius:10px;min-height:160px;display:flex;flex-direction:column;align-items:center}
+.cloud-title{font-weight:600;margin-bottom:8px}
+.public{background:linear-gradient(180deg,#eef9fb,#f7ffff)}
+.private{background:linear-gradient(180deg,#fff8ec,#fffdf6)}
+.server{background:#fff;padding:10px 14px;border-radius:8px;box-shadow:0 4px 10px rgba(10,20,30,0.04);min-width:60px;text-align:center}
+.server.active{box-shadow:0 0 0 6px rgba(62,207,142,0.08)}
+.controls button{background:#1f7a8c;color:white;border:0;padding:8px 12px;border-radius:8px;cursor:pointer}
+.controls .buttons{display:flex;gap:10px;flex-wrap:wrap}
+.status{display:flex;gap:16px;margin-top:12px;color:#666}
+footer{text-align:center;color:#666;font-size:14px;padding:8px 0 40px}
